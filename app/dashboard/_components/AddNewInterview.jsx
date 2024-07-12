@@ -18,6 +18,7 @@ import { MockInterview } from "@/utils/schema";
 import { v4 as uuidv4 } from "uuid";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment/moment";
+import { useRouter } from "next/router";
 
 function AddNewInterview() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -27,6 +28,7 @@ function AddNewInterview() {
   const [loading, setLoading] = useState(false);
   const [JsonResponse, setJsonResponse] = useState([]);
   const { user } = useUser();
+  //const route=useRouter()
   const onSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
@@ -51,6 +53,7 @@ function AddNewInterview() {
       }).returning({mockId:MockInterview.mockId})
       console.log("Insert ID:", resp)
       if(resp){
+       // route.push('/dashboard/interview/'+resp[0].mockId)
         setOpenDialog(false)
       }
     
