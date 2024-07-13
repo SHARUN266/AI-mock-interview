@@ -33,14 +33,14 @@ function AddNewInterview() {
     setLoading(true);
     e.preventDefault();
 
-    const InputPromt = `Job position: ${jobPosition}, Job Description: ${jobDesc}, job Experience: ${jobExperience}, Depend on Job Position, Job Description and Job Experience & Years of Experience give us ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION} Interview question along with Answer in JSON format`;
+    const InputPromt = `Generate ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION} interview questions and answers in JSON format based on the following: Job Position: ${jobPosition}, Job Description: ${jobDesc}, Years of Experience: ${jobExperience}. Only return the JSON, without any additional text.`;
     const result = await chatSession.sendMessage(InputPromt);
     const MockJsonResp = result.response
       .text()
       .replace("```json", "")
       .replace("```", "");
     //console.log(JSON.parse(MockJsonResp))
-    setJsonResponse(MockJsonResp);
+    setJsonResponse(JSON.parse(MockJsonResp));
    if(MockJsonResp){
     const resp = await db.insert(MockInterview).values({
         mockId: uuidv4(),
