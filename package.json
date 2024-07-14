@@ -23,11 +23,13 @@
     "lucide-react": "^0.407.0",
     "moment": "^2.30.1",
     "next": "14.2.5",
+    "next-themes": "^0.3.0",
     "npm": "^10.8.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-speech-to-text": "^0.8.0",
     "react-webcam": "^7.2.0",
+    "sonner": "^1.5.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^10.0.0"

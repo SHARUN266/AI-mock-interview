@@ -5,11 +5,12 @@ import { eq } from "drizzle-orm";
 import React, { useEffect, useState } from "react";
 import QuestionsSections from "./_compnents/QuestionsSections";
 import RecordAnswerSection from "./_compnents/RecordAnswerSection";
+import { Button } from "@/components/ui/button";
 
 function StartInterview({ params }) {
   const [interviewData, setInterviewData] = useState();
   const [mockInterviewQuestion, setMockInterviewQuestion] = useState();
-  const [activeQuestionIndex,setActiveQuestionIndex]=useState(0)
+  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
   useEffect(() => {
     GetInterviewDetail();
   }, []);
@@ -25,7 +26,6 @@ function StartInterview({ params }) {
       .where(eq(MockInterview.mockId, params.interviewId));
 
     const jsonMockResp = JSON.parse(result[0]?.jsonMockResp);
-   
 
     setMockInterviewQuestion(jsonMockResp);
 
@@ -35,9 +35,27 @@ function StartInterview({ params }) {
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Questions */}
-        <QuestionsSections activeQuestionIndex={activeQuestionIndex} mockInterViewQuestion={mockInterviewQuestion} />
+        <QuestionsSections
+          activeQuestionIndex={activeQuestionIndex}
+          mockInterViewQuestion={mockInterviewQuestion}
+        />
         {/* Video/ Audio Recording */}
-        <RecordAnswerSection/>
+        <RecordAnswerSection
+          activeQuestionIndex={activeQuestionIndex}
+          mockInterViewQuestion={mockInterviewQuestion}
+          interviewData={interviewData}
+        />
+      </div>
+
+      <div className="flex justify-end gap-6">
+        {activeQuestionIndex > 0 && <Button disabled={activeQuestionIndex==0}  onClick={()=>setActiveQuestionIndex(activeQuestionIndex-1)}>Previous Question</Button>}
+
+        {activeQuestionIndex !==
+          mockInterviewQuestion?.length - 1 && <Button onClick={()=>setActiveQuestionIndex(activeQuestionIndex+1)}>Next Question</Button>}
+
+        {activeQuestionIndex == mockInterviewQuestion?.length - 1 && (
+          <Button>End Interview</Button>
+        )}
       </div>
     </div>
   );
