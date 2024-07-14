@@ -1,16 +1,16 @@
 "use client"
 import { SignIn,useAuth } from "@clerk/nextjs";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Page() {
-  //const {isSignedIn}=useAuth();
-  //const router=useRouter()
-  // useEffect(()=>{
-  //    if(isSignedIn){
-  //     router.push("/dashboard")
-  //    }
-  // },[isSignedIn])
+  const {isSignedIn}=useAuth();
+  const router=useRouter()
+  useEffect(()=>{
+     if(isSignedIn){
+      router.push("/dashboard")
+     }
+  },[isSignedIn])
   return (
     <section class="bg-white dark:bg-gray-900">
       <div class="lg:grid lg:min-h-screen lg:grid-cols-12">

@@ -23,6 +23,7 @@ function RecordAnswerSection({ activeQuestionIndex, mockInterViewQuestion,interv
     results,
     startSpeechToText,
     stopSpeechToText,
+    setResults
   } = useSpeechToText({
     continuous: true,
     useLegacyResults: false,
@@ -90,9 +91,12 @@ function RecordAnswerSection({ activeQuestionIndex, mockInterViewQuestion,interv
     })
     
     if(resp){
+
       toast('User Answer recorder successfully!')
+      setUserAnswer('')
+      setResults([])
     }
-    setUserAnswer('')
+    setResults([])
     setLoading(false)
   }
 
