@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 
 function Feedback({ params }) {
   const [feedbackList, setFeedbackList] = useState([]);
+  const [avgRating,setAvgRating]=useState()
   const router=useRouter()
   useEffect(() => {
     GetFeedBack();
@@ -27,13 +28,21 @@ function Feedback({ params }) {
       .orderBy(UserAnswer.id);
 
     setFeedbackList(result);
+    let getTotalOfRating=result.reduce((sum,item)=>sum+Number(item.rating),0)
+    setAvgRating(Math.round(getTotalOfRating/result?.length))
+    // setAvgRating(result.reduce((sum, item) => sum + Number(item.rating), 0) / result.length)
+    // console.log(avgRating)
   };
   return (
     <div className="p-10">
-      <h2 className="text-3xl font-bold text-green-500">Congratulation!</h2>
-      <h2 className="font-bold text-2xl">Here is your interview feedback</h2>
-      <h2 className="text-primary text-lg my-3">
-        Your overall interview rating 7/10
+     
+      {
+        feedbackList?.length==0? <h2 className="font-bold text-xl text-gray-500">No Interview Feedback Record Found</h2> :
+        <>
+         <h2 className="text-3xl font-bold text-green-500">Congratulation!</h2>
+         <h2 className="font-bold text-2xl">Here is your interview feedback</h2>
+        <h2 className="text-primary text-lg my-3">
+        Your overall interview rating <strong  className={avgRating<6?'text-red-600':'text-green-500'} >{avgRating}/10</strong>
       </h2>
 
       <h2 className="text-sm text-gray-200">
@@ -56,6 +65,9 @@ function Feedback({ params }) {
       
 
       ))}
+        </>
+      }
+      
       <Button onClick={()=>router.replace('/dashboard')}>Go Home</Button>
     </div>
   );
