@@ -9,7 +9,7 @@ export default function Page() {
       <img
         alt=""
         src="https://images.unsplash.com/photo-1653406759381-4d6ca279cab3?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        class="absolute inset-0 h-full w-full object-cover"
+        class="absolute inset-0 object-cover"
       />
     </aside>
 
@@ -33,13 +33,14 @@ export default function Page() {
         </a>
 
         <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-          Welcome to Squid 🦑
+           Welcome to AI Interview Mocker 🦑
         </h1>
 
         <p class="mt-4 leading-relaxed text-gray-500">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
           quibusdam aperiam voluptatum.
         </p>
+        <div className="h-5"></div>
 
        <SignUp/>
       </div>

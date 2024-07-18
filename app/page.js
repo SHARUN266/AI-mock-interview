@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import Header from "./dashboard/_components/Header";
 import Link from "next/link";
 
+
 export default function Home() {
   return (
    <div>
@@ -13,6 +14,7 @@ export default function Home() {
       {/* Start Landing Page */}
       <div className="landing-page">
         <Header/>
+       
         
         <div className="content flex items-center justify-between min-h-[calc(100vh-80px)] p-4 container mx-auto md:flex-row flex-col gap-[140px] md:gap-0 md:justify-between">
           <div className="info w- md:text-left text-center mb-4 md:mb-0">
@@ -27,9 +29,12 @@ export default function Home() {
             <img className="main-image w-[600px] h-[400px] object-contain" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-working-using-vr-tech-3840669-3202986.png?f=webp" alt="Main"/>
           </div>
         </div>
+      
+        
       </div>
       {/* End Landing Page */}
     </div>
+   
 
    </div>
   );
