@@ -1,36 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ai Interview Mocker
 
-## Getting Started
+Welcome to our innovative platform, a unique website that generates mock interview questions using the advanced Gemini API. Our goal is to help individuals prepare for their upcoming interviews by providing them with realistic and tailored practice questions. Navigate through our site and take a step forward in your interview preparation journey today!
 
-First, run the development server:
+<img width="953" alt="Annotation 2024-07-17 192934" src="https://github.com/user-attachments/assets/34d207b8-26a6-4956-ac74-c0108dacee92">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<img width="958" alt="Annotation 2024-07-17 193028" src="https://github.com/user-attachments/assets/a1cc7993-c9e8-461f-9b36-a527143331fd">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img width="943" alt="Annotation 2024-07-17 193215" src="https://github.com/user-attachments/assets/d8df9845-b5b0-4446-a5fd-4bb267a2b3b2">
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img width="944" alt="Annotation 2024-07-17 193139" src="https://github.com/user-attachments/assets/1bbb12a4-861b-46f1-bcba-b1ac3cdce4ef">
